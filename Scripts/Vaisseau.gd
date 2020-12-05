@@ -19,24 +19,20 @@ func _physics_process(delta):
 		if health <= 0:
 			Global.goto_scene("res://Scenes/Mort.tscn")
 			
-		if collision.collider.name == "boulette":
-			health -= 5
-			get_node("CollisionShape2D").set_deferred("disabled",true)
-			yield(get_tree().create_timer(2.0),"timeout")
-			get_node("CollisionShape2D").set_deferred("disabled",false)
-			
-		if collision.collider.name == "missile":
-			health -= 10
-			get_node("CollisionShape2D").set_deferred("disabled",true)
-			yield(get_tree().create_timer(2.0),"timeout")
-			get_node("CollisionShape2D").set_deferred("disabled",false)
-
-
 	get_input()
 	var dir = get_global_mouse_position() - global_position
 	if dir.length() > 5:
 		rotation = dir.angle()
 		velocity = move_and_slide(velocity)
+
+func hit(integra):
+		health = health - integra
+		print(health)
+		get_node("CollisionShape2D").set_deferred("disabled",true)
+		yield(get_tree().create_timer(2.0),"timeout")
+		get_node("CollisionShape2D").set_deferred("disabled",false)
+		get_node("Lifebar/TextureProgress").value = health
+
 
 
 func get_input():

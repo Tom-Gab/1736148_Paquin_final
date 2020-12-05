@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Vaisseau.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/Player/ship.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 49.9282
+
+[sub_resource type="ParticlesMaterial" id=2]
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[sub_resource type="ParticlesMaterial" id=3]
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[node name="Vaisseau" type="KinematicBody2D"]
+script = ExtResource( 1 )
+bullet = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 6.10352e-05, 0.999939 )
+rotation = 1.59784
+scale = Vector2( 0.133449, 0.141777 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 6 )
+shape = SubResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 72, -4.76837e-07 )
+rotation = 4.59782
+
+[node name="Flame_Right" type="Particles2D" parent="."]
+show_behind_parent = true
+position = Vector2( -20, 14 )
+rotation = 1.55089
+process_material = SubResource( 2 )
+
+[node name="Flame_Left" type="Particles2D" parent="."]
+show_behind_parent = true
+position = Vector2( -22, -12 )
+rotation = 1.60942
+process_material = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.7 )

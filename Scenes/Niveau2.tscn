@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Layout/niveau 2.jpg" type="Texture" id=1]
+[ext_resource path="res://Scenes/Vaisseau.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/smol.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/medium.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Niveau2.gd" type="Script" id=5]
+
+[node name="Niveau2" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 515, 299 )
+rotation = -0.00132058
+scale = Vector2( 1.63732, 1.42165 )
+texture = ExtResource( 1 )
+
+[node name="Vaisseau" parent="." instance=ExtResource( 2 )]
+position = Vector2( 541, 296 )
+rotation = -0.00132058
+scale = Vector2( 0.836046, 0.769947 )
+
+[node name="smol" parent="." instance=ExtResource( 3 )]
+position = Vector2( 929, 510 )
+rotation = -2.63893
+
+[node name="smol2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 165.305, 109.128 )
+rotation = 0.683956
+
+[node name="smol3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 203, 430 )
+rotation = -0.550352
+
+[node name="medium" parent="." instance=ExtResource( 4 )]
+position = Vector2( 899, 92 )
+rotation = 2.46642
+
+[node name="medium2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 526, 62 )
+rotation = -4.80028

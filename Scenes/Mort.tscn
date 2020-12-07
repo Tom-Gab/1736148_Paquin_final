@@ -5,6 +5,8 @@
 [ext_resource path="res://Assets/Layout/Button_Quit.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Mort.gd" type="Script" id=4]
 
+
+
 [node name="Mort" type="TextureRect"]
 script = ExtResource( 4 )
 __meta__ = {

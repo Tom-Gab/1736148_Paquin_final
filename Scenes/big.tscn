@@ -33,21 +33,21 @@ shape = SubResource( 1 )
 position = Vector2( 140, 1.52588e-05 )
 rotation = 1.68227
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Position2D"]
-stream = ExtResource( 4 )
-
 [node name="Position2D2" type="Position2D" parent="."]
 position = Vector2( 94, 68 )
 rotation = 1.56984
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Position2D2"]
-stream = ExtResource( 4 )
 
 [node name="Position2D3" type="Position2D" parent="."]
 position = Vector2( 108, -80 )
 rotation = 1.55505
 
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Position2D3"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

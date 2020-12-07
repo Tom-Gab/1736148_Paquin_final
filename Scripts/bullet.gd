@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 export var speed = 500 # vitesse de l'asteroide
-export var dbug = false # print ou non tous les collisions
 var velocite = Vector2() # vecteur de mouvement 
 
 
@@ -18,8 +17,6 @@ func _physics_process(delta):
 	if collision:
 		if collision.collider.has_method("hit"):
 			collision.collider.hit()
-			_on_VisibilityNotifier2D_screen_exited()
-		velocite = velocite.bounce(collision.normal)
 
 
 

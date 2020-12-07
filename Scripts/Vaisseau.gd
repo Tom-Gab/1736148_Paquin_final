@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var speed = 100
 var health = 100
+onready var audio = $AudioStreamPlayer
 var velocity = Vector2()
 export (PackedScene) var bullet
 onready var cannon = $Position2D
@@ -36,27 +37,24 @@ func hit(integra):
 
 
 func get_input():
+	velocity = Vector2()
 	if Input.is_action_pressed("droite"):
-		velocity = Vector2(speed, 0).rotated(rotation)
 		velocity.x += 1
-		print("droite")
 		
 	if Input.is_action_pressed("gauche"):
-		velocity = Vector2(speed, 0).rotated(rotation)
 		velocity.x -= 1
-		print("gauche")
 		
 	if Input.is_action_pressed("recule"):
-		velocity = Vector2(speed, 0).rotated(rotation)
 		velocity.y += 1
-		print("recule")
 		
 	if Input.is_action_pressed("avance"):
-		velocity = Vector2(speed, 0).rotated(rotation)
 		velocity.y -= 1
-		print("avance")
 		
 	if Input.is_action_just_pressed("shoot"):
 		var b = bullet.instance()
 		b.creer(cannon.global_position, rotation)
 		get_parent().add_child(b)
+		audio.play()
+		
+	velocity = velocity.normalized() * speed
+

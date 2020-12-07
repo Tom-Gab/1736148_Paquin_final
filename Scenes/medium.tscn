@@ -9,6 +9,7 @@
 radius = 147.926
 
 [node name="medium" type="KinematicBody2D"]
+position = Vector2( -6, 0 )
 collision_layer = 4
 collision_mask = 4
 script = ExtResource( 2 )
@@ -28,10 +29,10 @@ polygon = PoolVector2Array( -50.075, -44.437, -22.075, -12.437, -2.07501, -34.43
 shape = SubResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 94, 0 )
+position = Vector2( 60, 0 )
 rotation = 1.60878
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Position2D"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

@@ -31,7 +31,7 @@ shape = SubResource( 1 )
 position = Vector2( 60, 0 )
 rotation = 1.54672
 
-[node name="boom" type="AudioStreamPlayer" parent="Position2D"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

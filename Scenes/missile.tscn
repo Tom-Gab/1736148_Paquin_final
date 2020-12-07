@@ -3,6 +3,8 @@
 [ext_resource path="res://Assets/Sprites/Ennemie/Enemy_Missile.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/missile.gd" type="Script" id=2]
 
+
+
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 13.925
 height = 38.874

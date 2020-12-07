@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Vaisseau.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Player/ship.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Lifebar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Sounds/shoot.wav" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 49.9282
@@ -21,6 +22,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
 [node name="Vaisseau" type="KinematicBody2D"]
+rotation = 1.5708
 script = ExtResource( 1 )
 bullet = ExtResource( 3 )
 
@@ -36,7 +38,7 @@ shape = SubResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 72, -4.76837e-07 )
-rotation = 4.59782
+rotation = -1.5708
 
 [node name="Flame_Right" type="Particles2D" parent="."]
 show_behind_parent = true
@@ -55,5 +57,8 @@ current = true
 zoom = Vector2( 0.5, 0.7 )
 
 [node name="Lifebar" parent="." instance=ExtResource( 4 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
 [editable path="Lifebar"]

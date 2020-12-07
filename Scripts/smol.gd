@@ -4,6 +4,7 @@ extends KinematicBody2D
 const speed = 100
 var velocity = Vector2()
 export (PackedScene) var boulette
+onready var audio = $AudioStreamPlayer
 onready var boom = $boom
 var is_entered = null
 var timer = null
@@ -50,6 +51,7 @@ func _on_Area2D_body_entered(body):
 		var b = boulette.instance()
 		b.creer(bop.global_position, rotation)
 		get_parent().add_child(b)
+		audio.play()
 
 
 func _on_Area2D_body_exited(body):
